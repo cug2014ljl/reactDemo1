@@ -1,22 +1,11 @@
 import React from 'react';
 
 export default class ComponentFir extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			content: ""
-		};
-	}
-	changeEvent(e){
-		this.setState({
-			content:e.target.value
-		})
-	}
   	render() {
     	return (
       		<div>
-      			<input type="text" onChange={(e)=>this.changeEvent(e)}/>
-        		<ContentFir dataVal={this.state.content}/>
+      			<input type="text" onChange={this.props.changeEventTitle} maxLength="8" placeholder="请输入Title"/>
+        		<ContentFir dataVal={this.props.dataTit}/>
       		</div>
     	);
   	}
@@ -26,7 +15,7 @@ export default class ComponentFir extends React.Component {
 class ContentFir extends React.Component {
   	render() {
     	return (
-			<div>您正在输入:  {this.props.dataVal}</div>
+			<div className="showContainer">Title:  <div>{this.props.dataVal}</div></div>
     	);
   	}
 }

@@ -1,22 +1,11 @@
 import React from 'react';
 
 export default class ComponentSec extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			content: ""
-		};
-	}
-	changeEvent(e){
-		this.setState({
-			content:e.target.value
-		})
-	}
   	render() {
     	return (
       		<div>
-      			<div>您正在输入: {this.state.content}</div>
-        		<ContentSec changeEvent={this.changeEvent.bind(this)}/>
+      			<div className="showContainer">Content: <div>{this.props.dataCon}</div></div>
+        		<ContentSec changeEventCon={this.props.changeEventCon.bind(this)}/>
       		</div>
     	);
   	}
@@ -26,7 +15,7 @@ export default class ComponentSec extends React.Component {
 class ContentSec extends React.Component {
   	render() {
     	return (
-			<input type="text" onChange={this.props.changeEvent}/>
+			<input type="text" onChange={this.props.changeEventCon} maxLength="16" placeholder="请输入Content"/>
     	);
   	}
 }

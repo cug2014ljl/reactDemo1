@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import ComponentFir from './component/ComponentFir'
 import ComponentSec from './component/ComponentSec'
+import AlertDrop from './component/AlertDrop'
 
 export default class App extends React.Component {
   render() {
@@ -11,6 +12,7 @@ export default class App extends React.Component {
       	<br/>
       	<br/>
       	<ComponentSec />
+      	<AlertDrop />
       </div>
     );
   }
